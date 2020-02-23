@@ -1,4 +1,4 @@
-// contracts/TodoList.sol
+// contracts/TodoList1.sol
 pragma solidity ^0.6.3;
 
 contract TodoList1 {
