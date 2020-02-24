@@ -33,12 +33,12 @@ async function main() {
 
   const todoList1 = loader.fromArtifact("TodoList1", address1);
 
-  // Send a transaction to store() a new value in the Box
+  // Send a transaction to add a new item in the TodoList1
   await todoList1.methods
     .addItem("go to class")
     .send({ from: from, gas: 100000, gasPrice: 1e6 });
 
-  // Call the retrieve() function of the deployed Box contract
+  // Call the getListItem() function to fetch the added item from TodoList1
   var item = await todoList1.methods.getListItem(0).call();
   console.log("TodoList1: List Item 0: ", item);
 
@@ -51,12 +51,12 @@ async function main() {
 
   const todoList2 = loader.fromArtifact("TodoList2", address2);
 
-  // Send a transaction to store() a new value in the Box
+  // Send a transaction to add a new item in the TodoList2
   await todoList2.methods
     .addItem("code")
     .send({ from: from, gas: 100000, gasPrice: 1e6 });
 
-  // Call the retrieve() function of the deployed Box contract
+  // Call the getListItem() function to fetch the added items from TodoList2
   var item0 = await todoList2.methods.getListItem(0).call();
   var item1 = await todoList2.methods.getListItem(1).call();
   console.log("TodoList2: List Item 0: ", item0);
